@@ -110,7 +110,7 @@ const Contact = () => {
               {/* Map Placeholder */}
               <div className="aspect-video bg-muted flex items-center justify-center relative overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.7147821926666!2d79.4922!3d12.9216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f4d7f6d8f17d%3A0x7e8e1b1f7a7e8f9a!2sUniversity%20College%20of%20Engineering%20Villupuram!5e0!3m2!1sen!2sin!4v1635123456789!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.3437572838716!2d79.51008997537578!3d11.95068488827871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5356d91e42871f%3A0xc43a95c77c96be61!2sUniversity%20College%20of%20Engineering%20Villupuram!5e0!3m2!1sen!2sin!4v1759076184049!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
