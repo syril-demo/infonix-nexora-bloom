@@ -8,39 +8,39 @@
 
 @layer base {
   :root {
-    /* Core Colors - Modern Tech Palette */
-    --background: 0 0% 100%;
-    --foreground: 225 15% 15%;
+    /* Core Colors - Dark Cyberpunk Theme */
+    --background: 220 26% 8%;
+    --foreground: 0 0% 95%;
     
-    /* Primary - Deep Tech Blue */
-    --primary: 225 85% 25%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 225 85% 45%;
+    /* Primary - Electric Cyan */
+    --primary: 180 100% 50%;
+    --primary-foreground: 220 26% 8%;
+    --primary-glow: 180 100% 60%;
     
-    /* Secondary - Soft Neutral */
-    --secondary: 225 10% 96%;
-    --secondary-foreground: 225 15% 15%;
+    /* Secondary - Dark Panel */
+    --secondary: 220 26% 12%;
+    --secondary-foreground: 0 0% 95%;
     
-    /* Accent - Electric Cyan */
-    --accent: 190 100% 55%;
-    --accent-foreground: 225 15% 15%;
-    --accent-glow: 190 100% 65%;
+    /* Accent - Neon Purple */
+    --accent: 270 100% 60%;
+    --accent-foreground: 0 0% 95%;
+    --accent-glow: 270 100% 70%;
     
     /* Supporting Colors */
-    --muted: 225 10% 96%;
-    --muted-foreground: 225 8% 45%;
+    --muted: 220 26% 15%;
+    --muted-foreground: 220 10% 65%;
     
-    --card: 0 0% 100%;
-    --card-foreground: 225 15% 15%;
+    --card: 220 26% 10%;
+    --card-foreground: 0 0% 95%;
     
-    --border: 225 15% 92%;
-    --input: 225 15% 92%;
-    --ring: 225 85% 25%;
+    --border: 220 26% 20%;
+    --input: 220 26% 15%;
+    --ring: 180 100% 50%;
     
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
     --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
-    --gradient-hero: radial-gradient(ellipse at top, hsl(var(--primary) / 0.1), transparent 60%);
+    --gradient-hero: radial-gradient(ellipse at center, hsl(var(--primary) / 0.1), hsl(var(--accent) / 0.05), transparent 70%);
     
     /* Shadows */
     --shadow-elegant: 0 4px 24px -4px hsl(var(--primary) / 0.1);
@@ -222,12 +222,26 @@
   }
 }
 
-/* Countdown Timer Styles */
-.countdown-digit {
-  @apply bg-primary text-primary-foreground rounded-lg p-4 min-w-[4rem] text-center font-heading font-bold text-2xl;
-  box-shadow: var(--shadow-elegant);
+/* Cyberpunk UI Styles */
+.glow-text {
+  text-shadow: 0 0 10px hsl(var(--primary)), 0 0 20px hsl(var(--primary)), 0 0 30px hsl(var(--primary));
 }
 
-.countdown-label {
+.cyberpunk-digit {
+  @apply bg-secondary border border-primary/30 text-primary rounded-lg p-4 min-w-[4rem] text-center font-heading font-bold text-2xl;
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+}
+
+.cyberpunk-label {
   @apply text-sm text-muted-foreground uppercase tracking-wide mt-2;
+}
+
+.cyberpunk-button-primary {
+  @apply bg-primary text-primary-foreground hover:bg-primary-glow;
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+}
+
+.cyberpunk-button-outline {
+  @apply border-primary text-primary hover:bg-primary hover:text-primary-foreground;
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
 }

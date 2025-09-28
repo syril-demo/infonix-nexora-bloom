@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Calendar, Clock, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import heroBackground from '@/assets/hero-bg.jpg';
+import infonixLogo from '@/assets/infonix-logo.jpg';
 
 const Hero = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -37,55 +37,66 @@ const Hero = () => {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{
-        backgroundImage: `linear-gradient(rgba(225, 85, 25, 0.1), rgba(225, 85, 25, 0.05)), url(${heroBackground})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
-      }}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
     >
-      {/* Background Overlay */}
+      {/* Cyberpunk Background Effects */}
       <div className="absolute inset-0 bg-gradient-hero" />
+      
+      {/* Geometric Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 right-20 w-32 h-32 border-2 border-primary/30 rounded-full"></div>
+        <div className="absolute top-60 right-80 w-20 h-20 border-2 border-accent/40 rounded-full"></div>
+        <div className="absolute bottom-40 right-40 w-48 h-48 border-2 border-primary/20 rounded-full"></div>
+        <div className="absolute bottom-20 left-20 w-24 h-24 border-2 border-accent/30 rounded-full"></div>
+        <div className="absolute top-40 left-60 w-16 h-16 border-2 border-primary/40 rounded-full"></div>
+        <div className="absolute top-96 left-96 w-36 h-36 border-2 border-accent/25 rounded-full"></div>
+      </div>
       
       <div className="relative z-10 container mx-auto px-4 lg:px-8 text-center">
         {/* Logo Section */}
-        <div className="flex justify-center items-center space-x-6 mb-8 fade-in">
-          <div className="w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center shadow-elegant">
-            <span className="text-primary-foreground font-heading font-bold text-2xl">UCE</span>
-          </div>
-          <div className="w-16 h-16 bg-gradient-accent rounded-xl flex items-center justify-center shadow-glow">
-            <span className="text-accent-foreground font-heading font-bold text-2xl">I2</span>
-          </div>
+        <div className="flex justify-center items-center mb-8 fade-in">
+          <img 
+            src={infonixLogo} 
+            alt="Infonix 2K25 Logo" 
+            className="w-48 h-48 lg:w-64 lg:h-64 object-contain drop-shadow-[0_0_20px_rgba(0,255,255,0.5)]"
+          />
         </div>
 
         {/* Title */}
-        <h1 className="hero-title mb-6 slide-up">
-          Infonix 2.0
+        <h1 className="text-6xl lg:text-8xl font-heading font-bold tracking-tight mb-4 slide-up">
+          <span className="text-primary glow-text">INFONIX</span>
+          <br />
+          <span className="text-accent text-4xl lg:text-6xl">'25</span>
         </h1>
         
-        <p className="hero-subtitle mb-8 fade-in" style={{ animationDelay: '0.2s' }}>
+        <div className="w-full max-w-md mx-auto h-1 bg-gradient-to-r from-transparent via-primary to-transparent mb-6 fade-in" style={{ animationDelay: '0.2s' }}></div>
+        
+        <p className="text-xl lg:text-2xl text-primary mb-4 font-medium fade-in" style={{ animationDelay: '0.3s' }}>
+          The Pulse of Innovation
+        </p>
+        
+        <p className="text-lg text-muted-foreground mb-8 fade-in max-w-3xl mx-auto" style={{ animationDelay: '0.4s' }}>
           National Level Technical Symposium 2K25<br />
           University College of Engineering Villupuram (Anna University)
         </p>
 
         {/* Countdown Timer */}
-        <div className="flex justify-center space-x-4 mb-12 fade-in" style={{ animationDelay: '0.4s' }}>
+        <div className="flex justify-center space-x-6 mb-12 fade-in" style={{ animationDelay: '0.5s' }}>
           <div className="text-center">
-            <div className="countdown-digit">{timeLeft.days}</div>
-            <div className="countdown-label">Days</div>
+            <div className="cyberpunk-digit">{timeLeft.days}</div>
+            <div className="cyberpunk-label">Days</div>
           </div>
           <div className="text-center">
-            <div className="countdown-digit">{timeLeft.hours}</div>
-            <div className="countdown-label">Hours</div>
+            <div className="cyberpunk-digit">{timeLeft.hours}</div>
+            <div className="cyberpunk-label">Hours</div>
           </div>
           <div className="text-center">
-            <div className="countdown-digit">{timeLeft.minutes}</div>
-            <div className="countdown-label">Minutes</div>
+            <div className="cyberpunk-digit">{timeLeft.minutes}</div>
+            <div className="cyberpunk-label">Minutes</div>
           </div>
           <div className="text-center">
-            <div className="countdown-digit">{timeLeft.seconds}</div>
-            <div className="countdown-label">Seconds</div>
+            <div className="cyberpunk-digit">{timeLeft.seconds}</div>
+            <div className="cyberpunk-label">Seconds</div>
           </div>
         </div>
 
@@ -95,14 +106,21 @@ const Hero = () => {
           <span className="font-medium">Online Registration Ends: October 25, 2025</span>
         </div>
 
-        <div className="fade-in" style={{ animationDelay: '0.8s' }}>
+        <div className="flex justify-center space-x-6 fade-in" style={{ animationDelay: '0.8s' }}>
           <Button 
-            variant="accent"
+            variant="primary"
             size="lg"
-            className="text-lg px-12 py-6 glow-pulse"
+            className="text-lg px-8 py-4 cyberpunk-button-primary"
             onClick={() => window.open('https://forms.google.com/your-registration-form', '_blank')}
           >
-            Register Now
+            REGISTER CLOSED
+          </Button>
+          <Button 
+            variant="outline"
+            size="lg"
+            className="text-lg px-8 py-4 cyberpunk-button-outline"
+          >
+            EXPLORE EVENTS
           </Button>
         </div>
 
