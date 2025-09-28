@@ -66,7 +66,7 @@ const Hero = () => {
         <h1 className="text-6xl lg:text-8xl font-heading font-bold tracking-tight mb-4 slide-up">
           <span className="text-primary glow-text">INFONIX</span>
           <br />
-          <span className="text-accent text-4xl lg:text-6xl">'25</span>
+          <span className="text-accent text-4xl lg:text-6xl">2k25</span>
         </h1>
         
         <div className="w-full max-w-md mx-auto h-1 bg-gradient-to-r from-transparent via-primary to-transparent mb-6 fade-in" style={{ animationDelay: '0.2s' }}></div>
@@ -77,7 +77,7 @@ const Hero = () => {
         
         <p className="text-lg text-muted-foreground mb-8 fade-in max-w-3xl mx-auto" style={{ animationDelay: '0.4s' }}>
           National Level Technical Symposium 2K25<br />
-          University College of Engineering Villupuram (Anna University)
+          University College of Engineering Villupuram.
         </p>
 
         {/* Countdown Timer */}
@@ -113,7 +113,7 @@ const Hero = () => {
             className="text-lg px-8 py-4 cyberpunk-button-primary"
             onClick={() => window.open('https://forms.google.com/your-registration-form', '_blank')}
           >
-            REGISTER CLOSED
+            REGISTER HERE
           </Button>
           <Button 
             variant="outline"
