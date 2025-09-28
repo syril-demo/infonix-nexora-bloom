@@ -2,41 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Infonix 2.0 Design System - Modern Technical Symposium Theme */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
+    /* Core Colors - Modern Tech Palette */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: 225 15% 15%;
+    
+    /* Primary - Deep Tech Blue */
+    --primary: 225 85% 25%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 225 85% 45%;
+    
+    /* Secondary - Soft Neutral */
+    --secondary: 225 10% 96%;
+    --secondary-foreground: 225 15% 15%;
+    
+    /* Accent - Electric Cyan */
+    --accent: 190 100% 55%;
+    --accent-foreground: 225 15% 15%;
+    --accent-glow: 190 100% 65%;
+    
+    /* Supporting Colors */
+    --muted: 225 10% 96%;
+    --muted-foreground: 225 8% 45%;
+    
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --card-foreground: 225 15% 15%;
+    
+    --border: 225 15% 92%;
+    --input: 225 15% 92%;
+    --ring: 225 85% 25%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
+    --gradient-hero: radial-gradient(ellipse at top, hsl(var(--primary) / 0.1), transparent 60%);
+    
+    /* Shadows */
+    --shadow-elegant: 0 4px 24px -4px hsl(var(--primary) / 0.1);
+    --shadow-glow: 0 0 32px hsl(var(--accent) / 0.2);
+    --shadow-card: 0 2px 16px -2px hsl(225 15% 15% / 0.08);
+    
+    /* Typography Scale */
+    --font-heading: 'Space Grotesk', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    
+    /* Spacing & Layout */
+    --radius: 12px;
+    --radius-lg: 16px;
+    --section-padding: 5rem;
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +122,112 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body antialiased;
   }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold;
+  }
+}
+
+@layer components {
+  /* Hero Section Styles */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .hero-title {
+    @apply text-5xl lg:text-7xl font-heading font-bold tracking-tight;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .hero-subtitle {
+    @apply text-lg lg:text-xl text-muted-foreground max-w-2xl;
+  }
+  
+  /* Button Variants */
+  .btn-primary {
+    background: var(--gradient-primary);
+    @apply text-primary-foreground px-8 py-4 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .btn-accent {
+    background: var(--gradient-accent);
+    @apply text-accent-foreground px-8 py-4 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
+    box-shadow: var(--shadow-glow);
+  }
+  
+  /* Card Styles */
+  .event-card {
+    @apply bg-card border border-border rounded-lg p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+    box-shadow: var(--shadow-card);
+  }
+  
+  .event-card:hover {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  /* Section Styles */
+  .section-padding {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+  }
+  
+  /* Animations */
+  .fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+  
+  .glow-pulse {
+    animation: glowPulse 2s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowPulse {
+  from {
+    box-shadow: 0 0 20px hsl(var(--accent) / 0.3);
+  }
+  to {
+    box-shadow: 0 0 40px hsl(var(--accent) / 0.6);
+  }
+}
+
+/* Countdown Timer Styles */
+.countdown-digit {
+  @apply bg-primary text-primary-foreground rounded-lg p-4 min-w-[4rem] text-center font-heading font-bold text-2xl;
+  box-shadow: var(--shadow-elegant);
+}
+
+.countdown-label {
+  @apply text-sm text-muted-foreground uppercase tracking-wide mt-2;
 }
