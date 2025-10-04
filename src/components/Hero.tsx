@@ -71,13 +71,16 @@ const Hero = () => {
         
         <div className="w-full max-w-md mx-auto h-1 bg-gradient-to-r from-transparent via-primary to-transparent mb-6 fade-in" style={{ animationDelay: '0.2s' }}></div>
         
-        <p className="text-xl lg:text-2xl text-primary mb-4 font-medium fade-in" style={{ animationDelay: '0.3s' }}>
-          The Pulse of Innovation
+        <p className="text-lg lg:text-xl text-foreground mb-2 fade-in" style={{ animationDelay: '0.3s' }}>
+          University College of Engineering Villupuram
         </p>
         
-        <p className="text-lg text-muted-foreground mb-8 fade-in max-w-3xl mx-auto" style={{ animationDelay: '0.4s' }}>
-          National Level Technical Symposium 2K25<br />
-          University College of Engineering Villupuram.
+        <p className="text-base lg:text-lg text-muted-foreground mb-4 fade-in" style={{ animationDelay: '0.35s' }}>
+          Department of Information Technology
+        </p>
+        
+        <p className="text-xl lg:text-2xl text-primary mb-8 font-medium fade-in" style={{ animationDelay: '0.4s' }}>
+          The Pulse of Innovation
         </p>
 
         {/* Countdown Timer */}
