@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Calendar, Clock, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import infonixLogo from '@/assets/infonix-logo.jpg';
+import infonixLogo from '@/assets/infonix-logo.png';
 
 const Hero = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -58,7 +58,7 @@ const Hero = () => {
           <img 
             src={infonixLogo} 
             alt="Infonix 2K25 Logo" 
-            className="w-48 h-48 lg:w-64 lg:h-64 object-contain drop-shadow-[0_0_20px_rgba(0,255,255,0.5)]"
+            className="w-56 h-56 lg:w-72 lg:h-72 object-contain drop-shadow-[0_0_30px_rgba(0,255,255,0.6)] brightness-110"
           />
         </div>
 
