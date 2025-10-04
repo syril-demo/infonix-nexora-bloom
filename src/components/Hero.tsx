@@ -71,15 +71,15 @@ const Hero = () => {
         
         <div className="w-full max-w-md mx-auto h-1 bg-gradient-to-r from-transparent via-primary to-transparent mb-6 fade-in" style={{ animationDelay: '0.2s' }}></div>
         
-        <p className="text-lg lg:text-xl text-primary glow-text mb-2 fade-in" style={{ animationDelay: '0.3s' }}>
+        <p className="text-xl lg:text-3xl text-primary glow-text mb-3 fade-in" style={{ animationDelay: '0.3s' }}>
           University College of Engineering Villupuram
         </p>
         
-        <p className="text-base lg:text-lg text-muted-foreground mb-4 fade-in" style={{ animationDelay: '0.35s' }}>
+        <p className="text-lg lg:text-xl text-muted-foreground mb-6 fade-in" style={{ animationDelay: '0.35s' }}>
           Department of Information Technology
         </p>
         
-        <p className="text-xl lg:text-2xl text-primary mb-8 font-medium fade-in" style={{ animationDelay: '0.4s' }}>
+        <p className="text-2xl lg:text-3xl text-primary mb-8 font-medium fade-in" style={{ animationDelay: '0.4s' }}>
           The Pulse of Innovation
         </p>
 
