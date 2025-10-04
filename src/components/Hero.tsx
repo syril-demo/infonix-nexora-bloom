@@ -122,6 +122,10 @@ const Hero = () => {
             variant="outline"
             size="lg"
             className="text-lg px-8 py-4 cyberpunk-button-outline"
+            onClick={() => {
+              const eventsSection = document.getElementById('events');
+              eventsSection?.scrollIntoView({ behavior: 'smooth' });
+            }}
           >
             EXPLORE EVENTS
           </Button>
