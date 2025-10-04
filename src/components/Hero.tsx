@@ -71,7 +71,7 @@ const Hero = () => {
         
         <div className="w-full max-w-md mx-auto h-1 bg-gradient-to-r from-transparent via-primary to-transparent mb-6 fade-in" style={{ animationDelay: '0.2s' }}></div>
         
-        <p className="text-lg lg:text-xl text-foreground mb-2 fade-in" style={{ animationDelay: '0.3s' }}>
+        <p className="text-lg lg:text-xl text-primary glow-text mb-2 fade-in" style={{ animationDelay: '0.3s' }}>
           University College of Engineering Villupuram
         </p>
         
