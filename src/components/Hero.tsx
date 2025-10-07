@@ -103,10 +103,16 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Registration Deadline */}
-        <div className="flex justify-center items-center space-x-2 mb-8 text-muted-foreground fade-in" style={{ animationDelay: '0.6s' }}>
-          <Calendar size={20} />
-          <span className="font-medium">Online Registration Ends: October 25, 2025</span>
+        {/* Important Dates */}
+        <div className="flex flex-col items-center space-y-3 mb-8">
+          <div className="flex items-center space-x-2 text-muted-foreground fade-in" style={{ animationDelay: '0.6s' }}>
+            <Calendar size={20} />
+            <span className="font-medium">Online Registration Ends: October 25, 2025</span>
+          </div>
+          <div className="flex items-center space-x-2 text-primary glow-text text-lg fade-in" style={{ animationDelay: '0.65s' }}>
+            <Calendar size={22} />
+            <span className="font-semibold">Event Date: October 31, 2025</span>
+          </div>
         </div>
 
         <div className="flex justify-center space-x-6 fade-in" style={{ animationDelay: '0.8s' }}>
