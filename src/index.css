@@ -222,6 +222,48 @@
   }
 }
 
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-100px) translateX(50px);
+    opacity: 0.8;
+  }
+}
+
+@keyframes floatMedium {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-80px) translateX(-40px);
+    opacity: 1;
+  }
+}
+
+@keyframes floatFast {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-60px) translateX(30px);
+    opacity: 0.9;
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
 /* Cyberpunk UI Styles */
 .glow-text {
   text-shadow: 0 0 10px hsl(var(--primary)), 0 0 20px hsl(var(--primary)), 0 0 30px hsl(var(--primary));
@@ -244,4 +286,81 @@
 .cyberpunk-button-outline {
   @apply border-primary text-primary hover:bg-primary hover:text-primary-foreground;
   box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+}
+
+/* Hero Background Effects */
+.hero-gradient-mesh {
+  background: linear-gradient(135deg, 
+    hsl(var(--primary) / 0.05) 0%, 
+    hsl(var(--accent) / 0.08) 25%, 
+    transparent 50%, 
+    hsl(var(--primary) / 0.05) 75%, 
+    hsl(var(--accent) / 0.08) 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+.hero-grid-pattern {
+  background-image: 
+    linear-gradient(hsl(var(--primary) / 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--primary) / 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.hero-scanlines {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    hsl(var(--primary) / 0.02) 50%,
+    transparent 100%
+  );
+  background-size: 100% 4px;
+  animation: scanlines 8s linear infinite;
+}
+
+@keyframes scanlines {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+.glow-pulse-primary {
+  animation: glowPulsePrimary 3s ease-in-out infinite;
+}
+
+.glow-pulse-accent {
+  animation: glowPulseAccent 3s ease-in-out infinite;
+}
+
+@keyframes glowPulsePrimary {
+  0%, 100% {
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.3), 0 0 20px hsl(var(--primary) / 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.5), 0 0 40px hsl(var(--primary) / 0.3);
+  }
+}
+
+@keyframes glowPulseAccent {
+  0%, 100% {
+    box-shadow: 0 0 10px hsl(var(--accent) / 0.3), 0 0 20px hsl(var(--accent) / 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px hsl(var(--accent) / 0.5), 0 0 40px hsl(var(--accent) / 0.3);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 12s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: floatMedium 8s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: floatFast 6s ease-in-out infinite;
 }

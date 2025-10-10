@@ -39,18 +39,38 @@ const Hero = () => {
       id="home" 
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
     >
-      {/* Cyberpunk Background Effects */}
+      {/* Animated Gradient Background */}
       <div className="absolute inset-0 bg-gradient-hero" />
+      <div className="absolute inset-0 hero-gradient-mesh" />
       
-      {/* Geometric Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 right-20 w-32 h-32 border-2 border-primary/30 rounded-full"></div>
-        <div className="absolute top-60 right-80 w-20 h-20 border-2 border-accent/40 rounded-full"></div>
-        <div className="absolute bottom-40 right-40 w-48 h-48 border-2 border-primary/20 rounded-full"></div>
-        <div className="absolute bottom-20 left-20 w-24 h-24 border-2 border-accent/30 rounded-full"></div>
-        <div className="absolute top-40 left-60 w-16 h-16 border-2 border-primary/40 rounded-full"></div>
-        <div className="absolute top-96 left-96 w-36 h-36 border-2 border-accent/25 rounded-full"></div>
+      {/* Grid Pattern Overlay */}
+      <div className="absolute inset-0 hero-grid-pattern opacity-20" />
+      
+      {/* Radial Glow Effects */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '4s' }} />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '6s', animationDelay: '2s' }} />
+      
+      {/* Floating Particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary rounded-full animate-float-slow" style={{ animationDelay: '0s' }} />
+        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-accent rounded-full animate-float-medium" style={{ animationDelay: '1s' }} />
+        <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-primary/70 rounded-full animate-float-fast" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-2/3 right-1/4 w-1 h-1 bg-accent/70 rounded-full animate-float-slow" style={{ animationDelay: '3s' }} />
+        <div className="absolute bottom-1/3 right-2/3 w-2 h-2 bg-primary/50 rounded-full animate-float-medium" style={{ animationDelay: '4s' }} />
       </div>
+      
+      {/* Geometric Background Elements with Glow */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 right-20 w-32 h-32 border-2 border-primary/30 rounded-full glow-pulse-primary"></div>
+        <div className="absolute top-60 right-80 w-20 h-20 border-2 border-accent/40 rounded-full glow-pulse-accent" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-40 right-40 w-48 h-48 border-2 border-primary/20 rounded-full glow-pulse-primary" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-20 left-20 w-24 h-24 border-2 border-accent/30 rounded-full glow-pulse-accent" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute top-40 left-60 w-16 h-16 border-2 border-primary/40 rounded-full glow-pulse-primary" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-96 left-96 w-36 h-36 border-2 border-accent/25 rounded-full glow-pulse-accent" style={{ animationDelay: '5s' }}></div>
+      </div>
+      
+      {/* Scan Lines Effect */}
+      <div className="absolute inset-0 hero-scanlines pointer-events-none" />
       
       <div className="relative z-10 container mx-auto px-4 lg:px-8 text-center">
         {/* Logo Section */}
