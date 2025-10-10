@@ -364,3 +364,65 @@
 .animate-float-fast {
   animation: floatFast 6s ease-in-out infinite;
 }
+
+/* Moving Background Animations */
+.animate-float-diagonal-1 {
+  animation: floatDiagonal1 20s ease-in-out infinite;
+}
+
+.animate-float-diagonal-2 {
+  animation: floatDiagonal2 25s ease-in-out infinite;
+}
+
+.animate-float-diagonal-3 {
+  animation: floatDiagonal3 18s ease-in-out infinite;
+}
+
+.animate-float-circular {
+  animation: floatCircular 30s linear infinite;
+}
+
+@keyframes floatDiagonal1 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(50px, -30px);
+  }
+  50% {
+    transform: translate(30px, 40px);
+  }
+  75% {
+    transform: translate(-40px, 20px);
+  }
+}
+
+@keyframes floatDiagonal2 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(-60px, 50px);
+  }
+  66% {
+    transform: translate(40px, -40px);
+  }
+}
+
+@keyframes floatDiagonal3 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-50px, -50px);
+  }
+}
+
+@keyframes floatCircular {
+  0% {
+    transform: rotate(0deg) translateX(30px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(30px) rotate(-360deg);
+  }
+}

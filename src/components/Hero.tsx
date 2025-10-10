@@ -59,14 +59,14 @@ const Hero = () => {
         <div className="absolute bottom-1/3 right-2/3 w-2 h-2 bg-primary/50 rounded-full animate-float-medium" style={{ animationDelay: '4s' }} />
       </div>
       
-      {/* Geometric Background Elements with Glow */}
+      {/* Geometric Background Elements with Glow and Movement */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 right-20 w-32 h-32 border-2 border-primary/30 rounded-full glow-pulse-primary"></div>
-        <div className="absolute top-60 right-80 w-20 h-20 border-2 border-accent/40 rounded-full glow-pulse-accent" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-40 right-40 w-48 h-48 border-2 border-primary/20 rounded-full glow-pulse-primary" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-20 left-20 w-24 h-24 border-2 border-accent/30 rounded-full glow-pulse-accent" style={{ animationDelay: '3s' }}></div>
-        <div className="absolute top-40 left-60 w-16 h-16 border-2 border-primary/40 rounded-full glow-pulse-primary" style={{ animationDelay: '4s' }}></div>
-        <div className="absolute top-96 left-96 w-36 h-36 border-2 border-accent/25 rounded-full glow-pulse-accent" style={{ animationDelay: '5s' }}></div>
+        <div className="absolute top-20 right-20 w-32 h-32 border-2 border-primary/30 rounded-full glow-pulse-primary animate-float-diagonal-1"></div>
+        <div className="absolute top-60 right-80 w-20 h-20 border-2 border-accent/40 rounded-full glow-pulse-accent animate-float-diagonal-2" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-40 right-40 w-48 h-48 border-2 border-primary/20 rounded-full glow-pulse-primary animate-float-circular" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-20 left-20 w-24 h-24 border-2 border-accent/30 rounded-full glow-pulse-accent animate-float-diagonal-3" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute top-40 left-60 w-16 h-16 border-2 border-primary/40 rounded-full glow-pulse-primary animate-float-diagonal-1" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-96 left-96 w-36 h-36 border-2 border-accent/25 rounded-full glow-pulse-accent animate-float-circular" style={{ animationDelay: '5s' }}></div>
       </div>
       
       {/* Scan Lines Effect */}
