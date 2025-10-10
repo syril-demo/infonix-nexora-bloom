@@ -8,44 +8,45 @@
 
 @layer base {
   :root {
-    /* Core Colors - Dark Cyberpunk Theme */
-    --background: 220 26% 8%;
-    --foreground: 0 0% 95%;
+    /* Core Colors - Dark Maroon/Burgundy Theme */
+    --background: 0 45% 12%;
+    --foreground: 30 100% 95%;
     
-    /* Primary - Electric Cyan */
-    --primary: 180 100% 50%;
-    --primary-foreground: 220 26% 8%;
-    --primary-glow: 180 100% 60%;
+    /* Primary - Fiery Orange/Red */
+    --primary: 18 95% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 14 100% 65%;
     
-    /* Secondary - Dark Panel */
-    --secondary: 220 26% 12%;
-    --secondary-foreground: 0 0% 95%;
+    /* Secondary - Deep Burgundy */
+    --secondary: 355 55% 20%;
+    --secondary-foreground: 30 100% 95%;
     
-    /* Accent - Neon Purple */
-    --accent: 270 100% 60%;
-    --accent-foreground: 0 0% 95%;
-    --accent-glow: 270 100% 70%;
+    /* Accent - Bright Orange */
+    --accent: 25 100% 60%;
+    --accent-foreground: 0 0% 10%;
+    --accent-glow: 30 100% 70%;
     
     /* Supporting Colors */
-    --muted: 220 26% 15%;
-    --muted-foreground: 220 10% 65%;
+    --muted: 0 35% 18%;
+    --muted-foreground: 30 20% 70%;
     
-    --card: 220 26% 10%;
-    --card-foreground: 0 0% 95%;
+    --card: 355 50% 15%;
+    --card-foreground: 30 100% 95%;
     
-    --border: 220 26% 20%;
-    --input: 220 26% 15%;
-    --ring: 180 100% 50%;
+    --border: 0 40% 30%;
+    --input: 355 45% 18%;
+    --ring: 18 95% 55%;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
-    --gradient-hero: radial-gradient(ellipse at center, hsl(var(--primary) / 0.1), hsl(var(--accent) / 0.05), transparent 70%);
+    --gradient-primary: linear-gradient(135deg, hsl(14 100% 50%), hsl(25 100% 60%));
+    --gradient-accent: linear-gradient(135deg, hsl(355 60% 35%), hsl(18 95% 55%));
+    --gradient-hero: radial-gradient(ellipse at center, hsl(18 95% 55% / 0.15), hsl(355 55% 20% / 0.1), transparent 70%);
+    --gradient-texture: linear-gradient(180deg, hsl(0 45% 12%), hsl(355 50% 10%));
     
     /* Shadows */
-    --shadow-elegant: 0 4px 24px -4px hsl(var(--primary) / 0.1);
-    --shadow-glow: 0 0 32px hsl(var(--accent) / 0.2);
-    --shadow-card: 0 2px 16px -2px hsl(225 15% 15% / 0.08);
+    --shadow-elegant: 0 4px 24px -4px hsl(18 95% 55% / 0.3);
+    --shadow-glow: 0 0 40px hsl(18 95% 55% / 0.4), 0 0 20px hsl(25 100% 60% / 0.3);
+    --shadow-card: 0 2px 16px -2px hsl(0 50% 8% / 0.5);
     
     /* Typography Scale */
     --font-heading: 'Space Grotesk', system-ui, sans-serif;
@@ -222,26 +223,36 @@
   }
 }
 
-/* Cyberpunk UI Styles */
+/* Grunge/Distressed UI Styles */
 .glow-text {
-  text-shadow: 0 0 10px hsl(var(--primary)), 0 0 20px hsl(var(--primary)), 0 0 30px hsl(var(--primary));
+  text-shadow: 0 0 20px hsl(var(--primary)), 0 0 40px hsl(var(--primary) / 0.8), 0 0 60px hsl(var(--accent) / 0.6);
 }
 
 .cyberpunk-digit {
-  @apply bg-secondary border border-primary/30 text-primary rounded-lg p-4 min-w-[4rem] text-center font-heading font-bold text-2xl;
-  box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  @apply bg-secondary border-2 border-primary/50 text-accent rounded-lg p-4 min-w-[4rem] text-center font-heading font-bold text-2xl;
+  box-shadow: 0 0 30px hsl(var(--primary) / 0.5), inset 0 2px 10px hsl(0 0% 0% / 0.3);
 }
 
 .cyberpunk-label {
-  @apply text-sm text-muted-foreground uppercase tracking-wide mt-2;
+  @apply text-sm text-foreground/80 uppercase tracking-widest mt-2 font-bold;
 }
 
 .cyberpunk-button-primary {
-  @apply bg-primary text-primary-foreground hover:bg-primary-glow;
-  box-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  @apply bg-gradient-to-r from-primary to-accent text-primary-foreground font-bold hover:scale-105;
+  box-shadow: 0 0 30px hsl(var(--primary) / 0.6), 0 4px 20px hsl(var(--primary) / 0.4);
+  transition: all 0.3s ease;
 }
 
 .cyberpunk-button-outline {
-  @apply border-primary text-primary hover:bg-primary hover:text-primary-foreground;
-  box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  @apply border-2 border-primary/80 text-foreground bg-secondary/50 hover:bg-primary hover:text-primary-foreground font-bold hover:scale-105 backdrop-blur-sm;
+  box-shadow: 0 0 25px hsl(var(--primary) / 0.4);
+  transition: all 0.3s ease;
+}
+
+/* Texture Overlay */
+.texture-overlay {
+  background-image: 
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E"),
+    linear-gradient(180deg, transparent, hsl(0 0% 0% / 0.2));
+  background-blend-mode: overlay;
 }
