@@ -37,44 +37,20 @@ const Hero = () => {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background via-secondary/50 to-background"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
     >
-      {/* Grunge Texture Overlay */}
-      <div className="absolute inset-0 texture-overlay" />
-      
-      {/* Glowing Background Effects */}
+      {/* Cyberpunk Background Effects */}
       <div className="absolute inset-0 bg-gradient-hero" />
       
-      {/* Distressed Geometric Elements with Pulsing Glow */}
-      <div className="absolute inset-0 overflow-hidden opacity-50">
-        <div className="absolute top-20 right-20 w-32 h-32 border-2 border-primary/60 rounded-full blur-[1px] animate-pulse" style={{ boxShadow: '0 0 50px hsl(18 95% 55% / 0.5), 0 0 80px hsl(18 95% 55% / 0.3)' }}></div>
-        <div className="absolute top-60 right-80 w-20 h-20 border-2 border-accent/70 rounded-full blur-[1px] animate-pulse" style={{ animationDelay: '1s', boxShadow: '0 0 35px hsl(25 100% 60% / 0.6), 0 0 60px hsl(25 100% 60% / 0.4)' }}></div>
-        <div className="absolute bottom-40 right-40 w-48 h-48 border-2 border-primary/50 rounded-full blur-[1px] animate-pulse" style={{ animationDelay: '2s', boxShadow: '0 0 60px hsl(18 95% 55% / 0.5), 0 0 100px hsl(18 95% 55% / 0.3)' }}></div>
-        <div className="absolute bottom-20 left-20 w-24 h-24 border-2 border-accent/60 rounded-full blur-[1px] animate-pulse" style={{ animationDelay: '1.5s', boxShadow: '0 0 40px hsl(25 100% 60% / 0.6), 0 0 70px hsl(25 100% 60% / 0.4)' }}></div>
-        <div className="absolute top-40 left-60 w-16 h-16 border-2 border-primary/70 rounded-full blur-[1px] animate-pulse" style={{ animationDelay: '0.5s', boxShadow: '0 0 30px hsl(18 95% 55% / 0.6), 0 0 50px hsl(18 95% 55% / 0.4)' }}></div>
-        <div className="absolute top-96 left-96 w-36 h-36 border-2 border-accent/55 rounded-full blur-[1px] animate-pulse" style={{ animationDelay: '2.5s', boxShadow: '0 0 55px hsl(25 100% 60% / 0.5), 0 0 90px hsl(25 100% 60% / 0.3)' }}></div>
+      {/* Geometric Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 right-20 w-32 h-32 border-2 border-primary/30 rounded-full"></div>
+        <div className="absolute top-60 right-80 w-20 h-20 border-2 border-accent/40 rounded-full"></div>
+        <div className="absolute bottom-40 right-40 w-48 h-48 border-2 border-primary/20 rounded-full"></div>
+        <div className="absolute bottom-20 left-20 w-24 h-24 border-2 border-accent/30 rounded-full"></div>
+        <div className="absolute top-40 left-60 w-16 h-16 border-2 border-primary/40 rounded-full"></div>
+        <div className="absolute top-96 left-96 w-36 h-36 border-2 border-accent/25 rounded-full"></div>
       </div>
-      
-      {/* Floating Color Particles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-primary rounded-full opacity-80 animate-ping" style={{ animationDuration: '3s', boxShadow: '0 0 20px hsl(18 95% 55% / 0.8)' }}></div>
-        <div className="absolute top-1/3 right-1/3 w-4 h-4 bg-accent rounded-full opacity-70 animate-ping" style={{ animationDuration: '4s', animationDelay: '1s', boxShadow: '0 0 25px hsl(25 100% 60% / 0.8)' }}></div>
-        <div className="absolute bottom-1/4 left-1/3 w-3 h-3 bg-primary rounded-full opacity-90 animate-ping" style={{ animationDuration: '3.5s', animationDelay: '2s', boxShadow: '0 0 22px hsl(18 95% 55% / 0.9)' }}></div>
-        <div className="absolute bottom-1/3 right-1/4 w-4 h-4 bg-accent rounded-full opacity-75 animate-ping" style={{ animationDuration: '4.5s', animationDelay: '0.5s', boxShadow: '0 0 28px hsl(25 100% 60% / 0.8)' }}></div>
-        <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-primary rounded-full opacity-85 animate-ping" style={{ animationDuration: '3.2s', animationDelay: '1.8s', boxShadow: '0 0 18px hsl(18 95% 55% / 0.8)' }}></div>
-        <div className="absolute top-2/3 right-2/3 w-3 h-3 bg-accent rounded-full opacity-80 animate-ping" style={{ animationDuration: '4.2s', animationDelay: '2.3s', boxShadow: '0 0 24px hsl(25 100% 60% / 0.8)' }}></div>
-      </div>
-      
-      {/* Radial Spotlight Effect */}
-      <div className="absolute inset-0" style={{ 
-        background: 'radial-gradient(ellipse at center, transparent 0%, hsl(0 45% 12% / 0.6) 60%, hsl(0 45% 12%) 100%)'
-      }}></div>
-      
-      {/* Animated Color Wave Effect */}
-      <div className="absolute inset-0 opacity-30" style={{
-        background: 'linear-gradient(45deg, transparent 30%, hsl(18 95% 55% / 0.1) 50%, transparent 70%)',
-        animation: 'slideGradient 8s ease-in-out infinite alternate'
-      }}></div>
       
       <div className="relative z-10 container mx-auto px-4 lg:px-8 text-center">
         {/* Logo Section */}
@@ -82,21 +58,18 @@ const Hero = () => {
           <img 
             src={infonixLogo} 
             alt="Infonix 2K25 Logo" 
-            className="w-56 h-56 lg:w-72 lg:h-72 object-contain brightness-110"
-            style={{ 
-              filter: 'drop-shadow(0 0 40px rgba(255, 120, 60, 0.8)) drop-shadow(0 0 20px rgba(255, 160, 100, 0.6))',
-            }}
+            className="w-56 h-56 lg:w-72 lg:h-72 object-contain drop-shadow-[0_0_30px_rgba(0,255,255,0.6)] brightness-110"
           />
         </div>
 
         {/* Title */}
         <h1 className="text-6xl lg:text-8xl font-heading font-bold tracking-tight mb-4 slide-up">
-          <span className="text-primary glow-text drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">INFONIX</span>
+          <span className="text-primary glow-text">INFONIX</span>
           <br />
-          <span className="text-accent text-4xl lg:text-6xl glow-text drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">2k25</span>
+          <span className="text-accent text-4xl lg:text-6xl">2k25</span>
         </h1>
         
-        <div className="w-full max-w-md mx-auto h-1 bg-gradient-to-r from-transparent via-primary to-transparent mb-6 fade-in shadow-glow" style={{ animationDelay: '0.2s' }}></div>
+        <div className="w-full max-w-md mx-auto h-1 bg-gradient-to-r from-transparent via-primary to-transparent mb-6 fade-in" style={{ animationDelay: '0.2s' }}></div>
         
         <p className="text-xl lg:text-3xl text-primary glow-text mb-3 fade-in" style={{ animationDelay: '0.3s' }}>
           University College of Engineering Villupuram
