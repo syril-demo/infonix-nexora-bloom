@@ -482,6 +482,17 @@
   }
 }
 
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100px) translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
+}
+
 .animate-bounce-slow {
   animation: bounce-slow 1.5s ease-in-out infinite;
 }
