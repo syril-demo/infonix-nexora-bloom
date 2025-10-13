@@ -6,11 +6,13 @@ import Registration from '@/components/Registration';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import RobotLoader from '@/components/RobotLoader';
+import ScrollRobot from '@/components/ScrollRobot';
 
 const Index = () => {
   return (
     <>
       <RobotLoader />
+      <ScrollRobot />
       <div className="min-h-screen">
         <Header />
         <main>
