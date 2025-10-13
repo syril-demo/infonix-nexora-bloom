@@ -5,20 +5,24 @@ import Events from '@/components/Events';
 import Registration from '@/components/Registration';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import RobotLoader from '@/components/RobotLoader';
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Events />
-        <Registration />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <>
+      <RobotLoader />
+      <div className="min-h-screen">
+        <Header />
+        <main>
+          <Hero />
+          <About />
+          <Events />
+          <Registration />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };
 
