@@ -4,6 +4,7 @@ import { Bot } from 'lucide-react';
 const ScrollRobot = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [hideTimeout, setHideTimeout] = useState<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,12 +14,32 @@ const ScrollRobot = () => {
       const progress = (scrolled / documentHeight) * 100;
       
       setScrollProgress(progress);
-      setIsVisible(scrolled > 100); // Show after scrolling 100px
+      
+      if (scrolled > 100) {
+        setIsVisible(true);
+        
+        // Clear existing timeout
+        if (hideTimeout) {
+          clearTimeout(hideTimeout);
+        }
+        
+        // Set new timeout to hide after 2 seconds
+        const timeout = setTimeout(() => {
+          setIsVisible(false);
+        }, 2000);
+        
+        setHideTimeout(timeout);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (hideTimeout) {
+        clearTimeout(hideTimeout);
+      }
+    };
+  }, [hideTimeout]);
 
   if (!isVisible) return null;
 
