@@ -1,4 +1,4 @@
-import { Code, Presentation, Palette, Link, Gamepad2, MessageSquare, Users2 } from 'lucide-react';
+import { Presentation, Sparkles, Bug, Brain, MessageSquare, Hammer, Gamepad2, Music } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 
 const Events = () => {
@@ -10,53 +10,100 @@ const Events = () => {
     {
       icon: Presentation,
       name: 'Paper Presentation',
-      description: 'Platform to showcase research via structured talks. Present your innovative ideas and research findings.',
-      details: 'Max 3 members per team • 8 min presentation + 4 min Q&A',
+      description: 'Showcase your research and innovative ideas through structured presentations.',
+      rules: [
+        'Maximum 3 members per team',
+        '8 minutes presentation + 4 minutes Q&A',
+        'PPT format required',
+        'Original research work only'
+      ],
       contact: '+91 8778729511',
     },
     {
-      icon: Code,
-      name: 'Debugging Challenge',
-      description: 'Test your coding skills in this intensive code debugging competition. Find and fix errors under pressure.',
-      details: 'Individual participation • Time-based challenge',
+      icon: Sparkles,
+      name: 'Prompt Fusion',
+      description: 'Test your AI prompt engineering skills and create innovative solutions.',
+      rules: [
+        'Individual or team of 2 members',
+        'AI tool proficiency required',
+        'Time-bound challenges',
+        'Creative problem-solving focus'
+      ],
       contact: '+91 8190853274',
     },
     {
-      icon: Palette,
-      name: 'Poster Presentation',
-      description: 'Visual display of innovative ideas and concepts. Create compelling visual narratives of your projects.',
-      details: 'Max 2 members per team • A1 size poster format',
+      icon: Bug,
+      name: 'Bug Buster',
+      description: 'Debug code and fix errors under pressure in this intensive coding challenge.',
+      rules: [
+        'Individual participation only',
+        'Multiple programming languages',
+        'Timed debugging rounds',
+        'Points based on speed and accuracy'
+      ],
       contact: '+91 8778729511',
+    },
+    {
+      icon: Brain,
+      name: 'Quiz Master',
+      description: 'Test your technical knowledge across various computer science domains.',
+      rules: [
+        'Teams of 2-3 members',
+        'Multiple rounds of elimination',
+        'Covers programming, algorithms, and tech trends',
+        'Rapid-fire and buzzer rounds'
+      ],
+      contact: '+91 8190853274',
     },
   ];
 
   const nonTechnicalEvents = [
     {
-      icon: Link,
-      name: 'Connection',
-      description: 'Word-association and networking challenge. Test your general knowledge and quick thinking abilities.',
-      details: 'Team event • Multiple rounds of elimination',
+      icon: MessageSquare,
+      name: 'Dialo Box',
+      description: 'Enact iconic dialogues from movies and literature with dramatic flair.',
+      rules: [
+        'Individual performance',
+        '3-5 minutes duration',
+        'Props and costumes allowed',
+        'Original delivery encouraged'
+      ],
       contact: '+91 8190853274',
     },
     {
-      icon: Gamepad2,
-      name: 'E-Sport Tournament',
-      description: 'Competitive gaming event featuring popular multiplayer games. Show your gaming prowess.',
-      details: 'Team & individual categories • Various game titles',
+      icon: Hammer,
+      name: 'Myth Smash',
+      description: 'Debunk myths and test your knowledge of facts vs fiction.',
+      rules: [
+        'Team of 2 members',
+        'Rapid-fire myth identification',
+        'Explanation required for answers',
+        'Multiple elimination rounds'
+      ],
       contact: '+91 8778729511',
     },
     {
-      icon: MessageSquare,
-      name: 'Dialogue Sharing',
-      description: 'Enact or deliver iconic dialogues from movies, literature, or create your own. Showcase your acting skills.',
-      details: 'Individual performance • 3-5 minutes duration',
+      icon: Gamepad2,
+      name: 'E-Sports',
+      description: 'Competitive gaming tournament featuring popular multiplayer games.',
+      rules: [
+        'Team and solo categories',
+        'Multiple game titles',
+        'Knockout tournament format',
+        'Own devices preferred'
+      ],
       contact: '+91 8190853274',
     },
     {
-      icon: Users2,
-      name: 'Debate Competition',
-      description: 'Structured debating on contemporary topics. Test your argumentation and public speaking skills.',
-      details: 'Max 2 members per team • Multiple rounds',
+      icon: Music,
+      name: 'Tune Hunt',
+      description: 'Identify songs and test your music knowledge across genres and eras.',
+      rules: [
+        'Teams of 2-3 members',
+        'Audio clip identification',
+        'Multiple music genres covered',
+        'Timed rounds with buzzer system'
+      ],
       contact: '+91 8778729511',
     },
   ];
@@ -86,11 +133,19 @@ const Events = () => {
         {event.description}
       </p>
       
-      <div className="space-y-2 mb-4">
-        <div className="text-sm font-medium text-foreground">
-          {event.details}
+      <div className="space-y-3 mb-4">
+        <div className="space-y-2">
+          <h4 className="text-sm font-semibold text-foreground">Rules:</h4>
+          <ul className="space-y-1.5">
+            {event.rules.map((rule: string, idx: number) => (
+              <li key={idx} className="text-sm text-muted-foreground flex items-start">
+                <span className="text-primary mr-2 mt-0.5">•</span>
+                <span>{rule}</span>
+              </li>
+            ))}
+          </ul>
         </div>
-        <div className="text-sm text-muted-foreground">
+        <div className="text-sm font-medium text-foreground pt-2 border-t border-border">
           Contact: {event.contact}
         </div>
       </div>
