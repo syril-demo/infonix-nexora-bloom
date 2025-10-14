@@ -17,6 +17,7 @@ const Events = () => {
         'PPT format required',
         'Original research work only'
       ],
+      coordinator: 'Raja Vijai Kumar',
       contact: '+91 8778729511',
     },
     {
@@ -29,6 +30,7 @@ const Events = () => {
         'Time-bound challenges',
         'Creative problem-solving focus'
       ],
+      coordinator: 'Raja Vijai Kumar',
       contact: '+91 8190853274',
     },
     {
@@ -41,6 +43,7 @@ const Events = () => {
         'Timed debugging rounds',
         'Points based on speed and accuracy'
       ],
+      coordinator: 'Raja Vijai Kumar',
       contact: '+91 8778729511',
     },
     {
@@ -53,6 +56,7 @@ const Events = () => {
         'Covers programming, algorithms, and tech trends',
         'Rapid-fire and buzzer rounds'
       ],
+      coordinator: 'Raja Vijai Kumar',
       contact: '+91 8190853274',
     },
   ];
@@ -68,6 +72,7 @@ const Events = () => {
         'Props and costumes allowed',
         'Original delivery encouraged'
       ],
+      coordinator: 'Raja Vijai Kumar',
       contact: '+91 8190853274',
     },
     {
@@ -80,6 +85,7 @@ const Events = () => {
         'Explanation required for answers',
         'Multiple elimination rounds'
       ],
+      coordinator: 'Raja Vijai Kumar',
       contact: '+91 8778729511',
     },
     {
@@ -92,6 +98,7 @@ const Events = () => {
         'Knockout tournament format',
         'Own devices preferred'
       ],
+      coordinator: 'Raja Vijai Kumar',
       contact: '+91 8190853274',
     },
     {
@@ -104,6 +111,7 @@ const Events = () => {
         'Multiple music genres covered',
         'Timed rounds with buzzer system'
       ],
+      coordinator: 'Raja Vijai Kumar',
       contact: '+91 8778729511',
     },
   ];
@@ -145,8 +153,13 @@ const Events = () => {
             ))}
           </ul>
         </div>
-        <div className="text-sm font-medium text-foreground pt-2 border-t border-border">
-          Contact: {event.contact}
+        <div className="text-sm space-y-1 pt-2 border-t border-border">
+          <div className="font-medium text-foreground">
+            Coordinator: {event.coordinator}
+          </div>
+          <div className="text-muted-foreground">
+            Contact: {event.contact}
+          </div>
         </div>
       </div>
     </div>
