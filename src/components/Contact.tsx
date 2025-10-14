@@ -1,7 +1,11 @@
 import { Mail, Phone, Instagram, MapPin, ExternalLink, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 
 const Contact = () => {
+  const headerReveal = useScrollReveal();
+  const infoReveal = useScrollReveal();
+  const mapReveal = useScrollReveal();
   const contactInfo = [
     {
       icon: Mail,
@@ -33,7 +37,14 @@ const Contact = () => {
     <section id="contact" className="section-padding">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div 
+          ref={headerReveal.ref}
+          className={`text-center mb-16 transition-all duration-1000 ${
+            headerReveal.isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-10'
+          }`}
+        >
           <h2 className="text-4xl lg:text-5xl font-heading font-bold text-foreground mb-6">
             Get in Touch <span className="bg-gradient-accent bg-clip-text text-transparent">With Us</span>
           </h2>
@@ -45,7 +56,14 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Contact Information */}
-          <div>
+          <div 
+            ref={infoReveal.ref}
+            className={`transition-all duration-1000 delay-200 ${
+              infoReveal.isVisible 
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-10'
+            }`}
+          >
             <h3 className="text-2xl font-heading font-semibold text-foreground mb-8">
               Contact Information
             </h3>
@@ -101,7 +119,14 @@ const Contact = () => {
           </div>
 
           {/* Map Section */}
-          <div>
+          <div 
+            ref={mapReveal.ref}
+            className={`transition-all duration-1000 delay-400 ${
+              mapReveal.isVisible 
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-10'
+            }`}
+          >
             <h3 className="text-2xl font-heading font-semibold text-foreground mb-8">
               Visit Our Campus
             </h3>

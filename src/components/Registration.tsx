@@ -1,12 +1,24 @@
 import { IndianRupee, Calendar, UtensilsCrossed, Clock, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 
 const Registration = () => {
+  const headerReveal = useScrollReveal();
+  const cardsReveal = useScrollReveal();
+  const inclusionsReveal = useScrollReveal();
+  const datesReveal = useScrollReveal();
   return (
     <section id="registration" className="section-padding bg-muted/30">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div 
+          ref={headerReveal.ref}
+          className={`text-center mb-16 transition-all duration-1000 ${
+            headerReveal.isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-10'
+          }`}
+        >
           <h2 className="text-4xl lg:text-5xl font-heading font-bold text-foreground mb-6">
             Registration & <span className="bg-gradient-primary bg-clip-text text-transparent">Fees</span>
           </h2>
@@ -17,9 +29,16 @@ const Registration = () => {
         </div>
 
         {/* Registration Cards */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div 
+          ref={cardsReveal.ref}
+          className="grid md:grid-cols-2 gap-8 mb-12"
+        >
           {/* Online Registration */}
-          <div className="event-card text-center">
+          <div className={`event-card text-center transition-all duration-700 ${
+            cardsReveal.isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-10'
+          }`}>
             <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6 shadow-elegant">
               <Calendar size={28} className="text-primary-foreground" />
             </div>
@@ -48,7 +67,11 @@ const Registration = () => {
           </div>
 
           {/* On-spot Registration */}
-          <div className="event-card text-center">
+          <div className={`event-card text-center transition-all duration-700 delay-100 ${
+            cardsReveal.isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-10'
+          }`}>
             <div className="w-16 h-16 bg-gradient-accent rounded-full flex items-center justify-center mx-auto mb-6 shadow-glow">
               <Clock size={28} className="text-accent-foreground" />
             </div>
@@ -75,7 +98,14 @@ const Registration = () => {
         </div>
 
         {/* Inclusions */}
-        <div className="bg-card rounded-lg p-8 shadow-card mb-12">
+        <div 
+          ref={inclusionsReveal.ref}
+          className={`bg-card rounded-lg p-8 shadow-card mb-12 transition-all duration-1000 delay-200 ${
+            inclusionsReveal.isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-10'
+          }`}
+        >
           <div className="text-center mb-6">
             <h3 className="text-2xl font-heading font-semibold text-foreground mb-2">
               What's Included
@@ -111,7 +141,14 @@ const Registration = () => {
         </div>
 
         {/* Important Dates */}
-        <div className="text-center bg-primary/10 rounded-lg p-6 border border-primary/20">
+        <div 
+          ref={datesReveal.ref}
+          className={`text-center bg-primary/10 rounded-lg p-6 border border-primary/20 transition-all duration-1000 delay-300 ${
+            datesReveal.isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-10'
+          }`}
+        >
           <h3 className="text-xl font-heading font-semibold text-foreground mb-4">
             Important Dates
           </h3>

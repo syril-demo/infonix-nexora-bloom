@@ -1,6 +1,11 @@
 import { BookOpen, Award, Users, Zap } from 'lucide-react';
+import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 
 const About = () => {
+  const headerReveal = useScrollReveal();
+  const descReveal = useScrollReveal();
+  const cardsReveal = useScrollReveal();
+  const universityReveal = useScrollReveal();
   const features = [
     {
       icon: BookOpen,
@@ -28,7 +33,14 @@ const About = () => {
     <section id="about" className="section-padding bg-muted/30">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div 
+          ref={headerReveal.ref}
+          className={`text-center mb-16 transition-all duration-1000 ${
+            headerReveal.isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-10'
+          }`}
+        >
           <h2 className="text-4xl lg:text-5xl font-heading font-bold text-foreground mb-6">
             About <span className="bg-gradient-primary bg-clip-text text-transparent">Infonix 2.0</span>
           </h2>
@@ -41,7 +53,14 @@ const About = () => {
         </div>
 
         {/* Main Description */}
-        <div className="bg-card rounded-lg p-8 lg:p-12 shadow-card mb-16">
+        <div 
+          ref={descReveal.ref}
+          className={`bg-card rounded-lg p-8 lg:p-12 shadow-card mb-16 transition-all duration-1000 delay-200 ${
+            descReveal.isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-10'
+          }`}
+        >
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="text-2xl font-heading font-semibold text-foreground mb-4">
@@ -59,12 +78,19 @@ const About = () => {
                 that will shape your future in technology and beyond.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-6">
+            <div 
+              ref={cardsReveal.ref}
+              className="grid grid-cols-2 gap-6"
+            >
               {features.map((feature, index) => (
                 <div 
                   key={index} 
-                  className="event-card text-center"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  className={`event-card text-center transition-all duration-700 ${
+                    cardsReveal.isVisible 
+                      ? 'opacity-100 translate-y-0' 
+                      : 'opacity-0 translate-y-10'
+                  }`}
+                  style={{ transitionDelay: `${index * 100 + 400}ms` }}
                 >
                   <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mx-auto mb-4 shadow-elegant">
                     <feature.icon size={24} className="text-primary-foreground" />
@@ -82,7 +108,14 @@ const About = () => {
         </div>
 
         {/* University Info */}
-        <div className="text-center">
+        <div 
+          ref={universityReveal.ref}
+          className={`text-center transition-all duration-1000 delay-500 ${
+            universityReveal.isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-10'
+          }`}
+        >
           <h3 className="text-2xl font-heading font-semibold text-foreground mb-4">
             University College of Engineering Villupuram
           </h3>

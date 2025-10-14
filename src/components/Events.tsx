@@ -1,6 +1,11 @@
 import { Code, Presentation, Palette, Link, Gamepad2, MessageSquare, Users2 } from 'lucide-react';
+import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 
 const Events = () => {
+  const headerReveal = useScrollReveal();
+  const techHeaderReveal = useScrollReveal();
+  const nonTechHeaderReveal = useScrollReveal();
+  const noteReveal = useScrollReveal();
   const technicalEvents = [
     {
       icon: Presentation,
@@ -56,8 +61,19 @@ const Events = () => {
     },
   ];
 
-  const EventCard = ({ event, category }: { event: any; category: string }) => (
-    <div className="event-card h-full">
+  const EventCard = ({ event, category, delay = 0 }: { event: any; category: string; delay?: number }) => {
+    const cardReveal = useScrollReveal();
+    
+    return (
+      <div 
+        ref={cardReveal.ref}
+        className={`event-card h-full transition-all duration-700 ${
+          cardReveal.isVisible 
+            ? 'opacity-100 translate-y-0' 
+            : 'opacity-0 translate-y-10'
+        }`}
+        style={{ transitionDelay: `${delay}ms` }}
+      >
       <div className={`w-12 h-12 ${category === 'technical' ? 'bg-gradient-primary' : 'bg-gradient-accent'} rounded-lg flex items-center justify-center mb-4 shadow-elegant`}>
         <event.icon size={24} className="text-white" />
       </div>
@@ -79,13 +95,21 @@ const Events = () => {
         </div>
       </div>
     </div>
-  );
+    );
+  };
 
   return (
     <section id="events" className="section-padding">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div 
+          ref={headerReveal.ref}
+          className={`text-center mb-16 transition-all duration-1000 ${
+            headerReveal.isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-10'
+          }`}
+        >
           <h2 className="text-4xl lg:text-5xl font-heading font-bold text-foreground mb-6">
             Events & <span className="bg-gradient-accent bg-clip-text text-transparent">Competitions</span>
           </h2>
@@ -97,7 +121,14 @@ const Events = () => {
 
         {/* Technical Events */}
         <div className="mb-16">
-          <div className="flex items-center justify-center mb-8">
+          <div 
+            ref={techHeaderReveal.ref}
+            className={`flex items-center justify-center mb-8 transition-all duration-1000 ${
+              techHeaderReveal.isVisible 
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-10'
+            }`}
+          >
             <div className="bg-gradient-primary text-primary-foreground px-6 py-3 rounded-full font-heading font-semibold text-lg shadow-elegant">
               Technical Events
             </div>
@@ -109,6 +140,7 @@ const Events = () => {
                 key={index} 
                 event={event} 
                 category="technical"
+                delay={index * 100}
               />
             ))}
           </div>
@@ -116,7 +148,14 @@ const Events = () => {
 
         {/* Non-Technical Events */}
         <div>
-          <div className="flex items-center justify-center mb-8">
+          <div 
+            ref={nonTechHeaderReveal.ref}
+            className={`flex items-center justify-center mb-8 transition-all duration-1000 ${
+              nonTechHeaderReveal.isVisible 
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-10'
+            }`}
+          >
             <div className="bg-gradient-accent text-accent-foreground px-6 py-3 rounded-full font-heading font-semibold text-lg shadow-glow">
               Non-Technical Events
             </div>
@@ -128,13 +167,21 @@ const Events = () => {
                 key={index} 
                 event={event} 
                 category="non-technical"
+                delay={index * 100}
               />
             ))}
           </div>
         </div>
 
         {/* Note */}
-        <div className="text-center mt-12 p-6 bg-muted/50 rounded-lg">
+        <div 
+          ref={noteReveal.ref}
+          className={`text-center mt-12 p-6 bg-muted/50 rounded-lg transition-all duration-1000 ${
+            noteReveal.isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-10'
+          }`}
+        >
           <p className="text-muted-foreground">
             <span className="font-semibold">Note:</span> Detailed event rules and guidelines will be shared with registered participants. 
             For specific queries, please contact the respective event coordinators.
