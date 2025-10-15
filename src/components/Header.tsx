@@ -15,10 +15,13 @@ const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-heading font-bold text-lg">I</span>
+          <div className="flex flex-col items-start">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
+                <span className="text-primary-foreground font-heading font-bold text-lg">I</span>
+              </div>
             </div>
+            <span className="text-foreground font-heading font-bold text-sm mt-1">Infonix 2K25</span>
           </div>
 
           {/* Desktop Navigation */}
