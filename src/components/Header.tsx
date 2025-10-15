@@ -19,7 +19,6 @@ const Header = () => {
             <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
               <span className="text-primary-foreground font-heading font-bold text-lg">I</span>
             </div>
-            <span className="font-heading font-bold text-xl text-foreground">Infonix 2.0</span>
           </div>
 
           {/* Desktop Navigation */}
