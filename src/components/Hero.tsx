@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Calendar, Clock, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import heroTechSpace from '@/assets/hero-tech-space.jpg';
 
 const Hero = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -38,7 +39,11 @@ const Hero = () => {
       id="home" 
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background pt-16"
     >
-      {/* Animated Gradient Background */}
+      {/* Animated Tech Space Background */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center animate-slow-pan opacity-30"
+        style={{ backgroundImage: `url(${heroTechSpace})` }}
+      />
       <div className="absolute inset-0 bg-gradient-hero" />
       <div className="absolute inset-0 hero-gradient-mesh" />
       

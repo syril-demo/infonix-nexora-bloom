@@ -427,6 +427,18 @@
   }
 }
 
+@keyframes slowPan {
+  0% {
+    transform: scale(1.1) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.15) translate(-20px, -20px);
+  }
+  100% {
+    transform: scale(1.1) translate(0, 0);
+  }
+}
+
 /* Robot Loader Animations */
 @keyframes bounce-slow {
   0%, 100% {
@@ -515,4 +527,8 @@
 
 .animate-wave-reverse {
   animation: wave-reverse 1s ease-in-out infinite;
+}
+
+.animate-slow-pan {
+  animation: slowPan 60s ease-in-out infinite;
 }
