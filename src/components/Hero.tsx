@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Calendar, Clock, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import infonixLogo from '@/assets/infonix-logo.png';
 
 const Hero = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -47,8 +46,8 @@ const Hero = () => {
       <div className="absolute inset-0 hero-grid-pattern opacity-20" />
       
       {/* Radial Glow Effects */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '4s' }} />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '6s', animationDelay: '2s' }} />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-[120px]" />
       
       {/* Floating Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -73,17 +72,8 @@ const Hero = () => {
       <div className="absolute inset-0 hero-scanlines pointer-events-none" />
       
       <div className="relative z-10 container mx-auto px-4 lg:px-8 text-center">
-        {/* Logo Section */}
-        <div className="flex justify-center items-center mb-8 fade-in">
-          <img 
-            src={infonixLogo} 
-            alt="Infonix 2K25 Logo" 
-            className="w-56 h-56 lg:w-72 lg:h-72 object-contain drop-shadow-[0_0_30px_rgba(0,255,255,0.6)] brightness-110"
-          />
-        </div>
-
         {/* Title */}
-        <h1 className="text-6xl lg:text-8xl font-heading font-bold tracking-tight mb-4 slide-up">
+        <h1 className="text-6xl lg:text-8xl font-heading font-bold tracking-tight mb-6 fade-in">
           <span className="text-primary glow-text">INFONIX</span>
           <br />
           <span className="text-accent text-4xl lg:text-6xl">2k25</span>
