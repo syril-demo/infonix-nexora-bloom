@@ -161,6 +161,46 @@
     box-shadow: var(--shadow-glow);
   }
   
+  /* Navigation Link Hover Effect */
+  .nav-link {
+    @apply relative text-foreground transition-all duration-300 py-2;
+  }
+  
+  .nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--primary) / 0.5));
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    background: hsl(var(--primary) / 0.1);
+    border-radius: 6px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+  
+  .nav-link:hover {
+    color: hsl(var(--primary));
+    transform: translateY(-2px);
+  }
+  
+  .nav-link:hover::before {
+    width: 100%;
+  }
+  
+  .nav-link:hover::after {
+    opacity: 1;
+  }
+
   /* Card Styles */
   .event-card {
     @apply bg-card border border-border rounded-lg p-6 transition-all duration-300;

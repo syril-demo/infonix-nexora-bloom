@@ -28,25 +28,25 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <button 
               onClick={() => scrollToSection('home')} 
-              className="text-foreground hover:text-primary transition-colors"
+              className="nav-link"
             >
               Home
             </button>
             <button 
               onClick={() => scrollToSection('about')} 
-              className="text-foreground hover:text-primary transition-colors"
+              className="nav-link"
             >
               About
             </button>
             <button 
               onClick={() => scrollToSection('events')} 
-              className="text-foreground hover:text-primary transition-colors"
+              className="nav-link"
             >
               Events
             </button>
             <button 
               onClick={() => scrollToSection('contact')} 
-              className="text-foreground hover:text-primary transition-colors"
+              className="nav-link"
             >
               Contact
             </button>
@@ -73,25 +73,25 @@ const Header = () => {
             <nav className="flex flex-col space-y-4">
               <button 
                 onClick={() => scrollToSection('home')} 
-                className="text-left text-foreground hover:text-primary transition-colors"
+                className="text-left nav-link"
               >
                 Home
               </button>
               <button 
                 onClick={() => scrollToSection('about')} 
-                className="text-left text-foreground hover:text-primary transition-colors"
+                className="text-left nav-link"
               >
                 About
               </button>
               <button 
                 onClick={() => scrollToSection('events')} 
-                className="text-left text-foreground hover:text-primary transition-colors"
+                className="text-left nav-link"
               >
                 Events
               </button>
               <button 
                 onClick={() => scrollToSection('contact')} 
-                className="text-left text-foreground hover:text-primary transition-colors"
+                className="text-left nav-link"
               >
                 Contact
               </button>
