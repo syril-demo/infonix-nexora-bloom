@@ -122,47 +122,66 @@ const Events = () => {
     return (
       <div 
         ref={cardReveal.ref}
-        className={`event-card h-full transition-all duration-700 ${
+        className={`flip-card h-[400px] transition-all duration-700 ${
           cardReveal.isVisible 
             ? 'opacity-100 translate-y-0' 
             : 'opacity-0 translate-y-10'
         }`}
         style={{ transitionDelay: `${delay}ms` }}
       >
-      <div className={`w-12 h-12 ${category === 'technical' ? 'bg-gradient-primary' : 'bg-gradient-accent'} rounded-lg flex items-center justify-center mb-4 shadow-elegant`}>
-        <event.icon size={24} className="text-white" />
-      </div>
-      
-      <h3 className="text-xl font-heading font-semibold text-foreground mb-3">
-        {event.name}
-      </h3>
-      
-      <p className="text-muted-foreground mb-4 leading-relaxed">
-        {event.description}
-      </p>
-      
-      <div className="space-y-3 mb-4">
-        <div className="space-y-2">
-          <h4 className="text-sm font-semibold text-foreground">Rules:</h4>
-          <ul className="space-y-1.5">
-            {event.rules.map((rule: string, idx: number) => (
-              <li key={idx} className="text-sm text-muted-foreground flex items-start">
-                <span className="text-primary mr-2 mt-0.5">•</span>
-                <span>{rule}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="text-sm space-y-1 pt-2 border-t border-border">
-          <div className="font-medium text-foreground">
-            Coordinator: {event.coordinator}
+        <div className="flip-card-inner">
+          {/* Front of Card */}
+          <div className="flip-card-front event-card">
+            <div className={`w-16 h-16 ${category === 'technical' ? 'bg-gradient-primary' : 'bg-gradient-accent'} rounded-lg flex items-center justify-center mb-4 shadow-elegant`}>
+              <event.icon size={32} className="text-white" />
+            </div>
+            
+            <h3 className="text-2xl font-heading font-semibold text-foreground mb-4">
+              {event.name}
+            </h3>
+            
+            <p className="text-muted-foreground mb-6 leading-relaxed text-center">
+              {event.description}
+            </p>
+
+            <div className="mt-auto pt-4 border-t border-border">
+              <p className="text-sm text-primary font-medium">
+                Hover to see details →
+              </p>
+            </div>
           </div>
-          <div className="text-muted-foreground">
-            Contact: {event.contact}
+
+          {/* Back of Card */}
+          <div className="flip-card-back event-card">
+            <div className="space-y-4 h-full flex flex-col">
+              <h3 className="text-xl font-heading font-semibold text-foreground">
+                {event.name}
+              </h3>
+              
+              <div className="space-y-2 flex-1 overflow-y-auto">
+                <h4 className="text-sm font-semibold text-foreground">Rules:</h4>
+                <ul className="space-y-1.5">
+                  {event.rules.map((rule: string, idx: number) => (
+                    <li key={idx} className="text-sm text-muted-foreground flex items-start">
+                      <span className="text-primary mr-2 mt-0.5">•</span>
+                      <span>{rule}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              <div className="text-sm space-y-1 pt-3 border-t border-border mt-auto">
+                <div className="font-medium text-foreground">
+                  Coordinator: {event.coordinator}
+                </div>
+                <div className="text-muted-foreground">
+                  Contact: {event.contact}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     );
   };
 
