@@ -39,10 +39,10 @@ const Hero = () => {
       id="home" 
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background pt-16"
     >
-      {/* Animated Tech Space Background */}
+      {/* Fixed Parallax Background */}
       <div 
-        className="absolute inset-0 bg-cover bg-center animate-slow-pan opacity-30"
-        style={{ backgroundImage: `url(${heroTechSpace})` }}
+        className="fixed inset-0 bg-cover bg-center animate-slow-pan opacity-30 -z-10"
+        style={{ backgroundImage: `url(${heroTechSpace})`, backgroundAttachment: 'fixed' }}
       />
       <div className="absolute inset-0 bg-gradient-hero" />
       <div className="absolute inset-0 hero-gradient-mesh" />
