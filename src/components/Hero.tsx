@@ -44,11 +44,11 @@ const Hero = () => {
         className="fixed inset-0 bg-cover bg-center animate-slow-pan opacity-30 -z-10"
         style={{ backgroundImage: `url(${heroTechSpace})`, backgroundAttachment: 'fixed' }}
       />
-      <div className="absolute inset-0 bg-gradient-hero" />
-      <div className="absolute inset-0 hero-gradient-mesh" />
+      <div className="fixed inset-0 bg-gradient-hero -z-10" />
+      <div className="fixed inset-0 hero-gradient-mesh -z-10" />
       
       {/* Grid Pattern Overlay */}
-      <div className="absolute inset-0 hero-grid-pattern opacity-20" />
+      <div className="fixed inset-0 hero-grid-pattern opacity-20 -z-10" />
       
       {/* Radial Glow Effects */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
