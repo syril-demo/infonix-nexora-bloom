@@ -30,7 +30,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="section-padding bg-muted/30">
+    <section id="about" className="section-padding bg-muted/30 min-h-screen flex items-center">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
         <div 

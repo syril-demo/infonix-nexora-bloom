@@ -8,7 +8,7 @@ const Registration = () => {
   const inclusionsReveal = useScrollReveal();
   const datesReveal = useScrollReveal();
   return (
-    <section id="registration" className="section-padding bg-muted/30">
+    <section id="registration" className="section-padding bg-muted/30 min-h-screen flex items-center">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
         <div 

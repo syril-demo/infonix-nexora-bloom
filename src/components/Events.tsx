@@ -167,7 +167,7 @@ const Events = () => {
   };
 
   return (
-    <section id="events" className="section-padding">
+    <section id="events" className="section-padding min-h-screen">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
         <div 
