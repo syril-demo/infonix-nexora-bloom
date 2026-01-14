@@ -1,11 +1,26 @@
-import { Presentation, Sparkles, Bug, Brain, MessageSquare, Hammer, Gamepad2, Music } from 'lucide-react';
+import { Presentation, Sparkles, Bug, Brain, MessageSquare, Hammer, Gamepad2, Music, Clock, MapPin, Coffee, UtensilsCrossed, Award, Mic } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 
 const Events = () => {
   const headerReveal = useScrollReveal();
+  const timelineReveal = useScrollReveal();
   const techHeaderReveal = useScrollReveal();
   const nonTechHeaderReveal = useScrollReveal();
   const noteReveal = useScrollReveal();
+
+  const timelineEvents = [
+    { time: '9.30am - 10.30am', event: 'Inauguration', venue: 'Main Hall', icon: Mic, type: 'ceremony' },
+    { time: '10.30am - 11.00am', event: 'Tea Break & Snacks', venue: 'Cafeteria', icon: Coffee, type: 'break' },
+    { time: '11.00am - 3.00pm', event: 'Paper Presentation', venue: 'Mini Conference Hall', icon: Presentation, type: 'technical' },
+    { time: '11.00am - 1.00pm', event: 'Quiz Master', venue: 'Smart Class', icon: Brain, type: 'technical' },
+    { time: '11.00am - 1.00pm', event: 'Myth Smash', venue: '2nd Yr Class', icon: Hammer, type: 'non-technical' },
+    { time: '12.00pm - 3.30pm', event: 'Debugging', venue: 'IT Lab 1', icon: Bug, type: 'technical' },
+    { time: '12.00pm - 2.30pm', event: 'Tune Hunt', venue: '3rd Class', icon: Music, type: 'non-technical' },
+    { time: '1.15pm - 2.00pm', event: 'Lunch', venue: 'Mess', icon: UtensilsCrossed, type: 'break' },
+    { time: '2.00pm - 3.00pm', event: 'E-Sports', venue: 'IT Lab 2', icon: Gamepad2, type: 'non-technical' },
+    { time: '2.00pm - 3.30pm', event: 'Dialo Box', venue: '2nd Class', icon: MessageSquare, type: 'non-technical' },
+    { time: '4.00pm - 5.00pm', event: 'Certificate & Prize Distribution', venue: 'Mini Conference Hall', icon: Award, type: 'ceremony' },
+  ];
   const technicalEvents = [
     {
       icon: Presentation,
@@ -204,6 +219,85 @@ const Events = () => {
             Participate in diverse technical and non-technical events designed to challenge 
             your skills, creativity, and knowledge across multiple domains.
           </p>
+        </div>
+
+        {/* Event Timeline */}
+        <div 
+          ref={timelineReveal.ref}
+          className={`mb-20 transition-all duration-1000 ${
+            timelineReveal.isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-10'
+          }`}
+        >
+          <div className="flex items-center justify-center mb-10">
+            <div className="bg-gradient-to-r from-primary via-accent to-primary text-primary-foreground px-8 py-4 rounded-full font-heading font-bold text-xl shadow-elegant">
+              <Clock className="inline-block mr-2 -mt-1" size={24} />
+              Event Timeline
+            </div>
+          </div>
+          
+          <div className="relative">
+            {/* Timeline Line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary via-accent to-primary rounded-full hidden lg:block" />
+            
+            <div className="space-y-6">
+              {timelineEvents.map((item, index) => (
+                <div 
+                  key={index}
+                  className={`flex items-center gap-4 lg:gap-8 ${
+                    index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
+                  }`}
+                >
+                  {/* Content Card */}
+                  <div className={`flex-1 ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'}`}>
+                    <div className={`timeline-card inline-block p-4 rounded-xl border transition-all duration-300 hover:scale-105 ${
+                      item.type === 'ceremony' 
+                        ? 'bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border-yellow-500/30' 
+                        : item.type === 'break'
+                        ? 'bg-gradient-to-br from-green-500/20 to-emerald-500/20 border-green-500/30'
+                        : item.type === 'technical'
+                        ? 'bg-gradient-to-br from-primary/20 to-blue-500/20 border-primary/30'
+                        : 'bg-gradient-to-br from-accent/20 to-pink-500/20 border-accent/30'
+                    }`}>
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                          item.type === 'ceremony' 
+                            ? 'bg-yellow-500/30' 
+                            : item.type === 'break'
+                            ? 'bg-green-500/30'
+                            : item.type === 'technical'
+                            ? 'bg-primary/30'
+                            : 'bg-accent/30'
+                        }`}>
+                          <item.icon size={20} className="text-foreground" />
+                        </div>
+                        <div>
+                          <h4 className="font-heading font-semibold text-foreground text-lg">
+                            {item.event}
+                          </h4>
+                          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                            <Clock size={14} />
+                            <span>{item.time}</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                        <MapPin size={14} />
+                        <span>{item.venue}</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Timeline Dot */}
+                  <div className="hidden lg:flex w-6 h-6 rounded-full bg-background border-4 border-primary z-10 flex-shrink-0" />
+                  
+                  {/* Empty space for alternating layout */}
+                  <div className="flex-1 hidden lg:block" />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Technical Events */}
